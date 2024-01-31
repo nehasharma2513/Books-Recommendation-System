@@ -22,7 +22,26 @@ h3 {
     text-align: center;
 }
 
-#chartJsChart {
-    width:600;
-    height: 250px; 
-} 
+.text-white{
+    color:white ;
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif
+ }
+
+ * {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
