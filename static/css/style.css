@@ -29,6 +29,13 @@ h3 {
     font-family: Arial, Helvetica, sans-serif
  }
 
+.text-black{
+  color:black ;
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif
+}
+
  * {
     box-sizing: border-box;
   }
