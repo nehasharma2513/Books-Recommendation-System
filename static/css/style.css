@@ -52,3 +52,16 @@ h3 {
     clear: both;
     display: table;
   }
+
+  .navbar {
+    height: 200px;
+}
+
+.navbar-text{
+  padding-right: 60%;
+  font-size: x-large;
+}
+.nav-item{
+  padding: 15px 50px 25px 70px;
+  font-size: x-large;
+}
