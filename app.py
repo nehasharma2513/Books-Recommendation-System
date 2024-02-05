@@ -5,8 +5,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 import pickle
 
 popular_df=pickle.load(open('Books-Recommendation-System\popular.pkl', 'rb'))
-rating_input_df=pickle.load(open('Books-Recommendation-System\rating_input.pkl', 'rb'))
-books_df=pickle.load(open('Books-Recommendation-System\books_df.pkl', 'rb'))
+rating_input_df=pickle.load(open('Books-Recommendation-System/rating_input.pkl', 'rb'))
+books_df=pickle.load(open('Books-Recommendation-System/books_df.pkl', 'rb'))
 #################################################
 # Flask Setup
 #################################################
@@ -32,6 +32,7 @@ def recommend_by_book_ui():
 
 @app.route("/recommend_book", methods=['post'])
 def recommend_book():
+    data=[]
     user_book=request.form.get("user_book")
     df_books_ratigs_user=rating_input_df.pivot_table(index='Book-Title', columns='User-ID', values='Book-Rating')
     # filling n/a with 0 so far, assuming it means that no interest for a book by a user,
@@ -55,12 +56,16 @@ def recommend_book():
     recommendations_full_info=pd.merge(top_recommendations, books_df, left_on='Book-Title',right_on='Book-Title', how='left')
     dict_years=dict(recommendations_full_info.groupby('Book-Title')['Year-Of-Publication'].max())
     for i, row in recommendations_full_info.iterrows():
+        item=[]
         if row['Year-Of-Publication']!=dict_years[row['Book-Title']]:
             recommendations_full_info.loc[i,'Year-Of-Publication']=0
-    recommendations_full_info=recommendations_full_info[recommendations_full_info['Year-Of-Publication'] != 0]
-    recommendations_full_info=recommendations_full_info.drop_duplicates(subset=['Book-Title'])
-    print(recommendations_full_info)
-    return str(user_book)
+        recommendations_full_info=recommendations_full_info[recommendations_full_info['Year-Of-Publication'] != 0]
+        recommendations_full_info=recommendations_full_info.drop_duplicates(subset=['Book-Title'])
+        item.append(list(recommendations_full_info['Book-Title'].values))
+        item.append(list(recommendations_full_info['Book-Author'].values))
+        item.append(list(recommendations_full_info['Image-URL-M'].values))    
+        data.append(item)
+    return render_template("recommend_by_book.html",data = data)
 
 @app.route("/recommend_user_ui")
 def recommend_user_ui():

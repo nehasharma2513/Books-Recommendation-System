@@ -43,17 +43,19 @@
 
             </form>
         </div>
-
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                            <img class="card-img-top" src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="Image not available">
-                            <h2 class="text-black">Book name</h2>
-                            <h4 class="text-black">Author</h4>
-                    </div>
-                </div>
-            </div>
-      
+         {% if data %}
+          {% for i in data %}
+              <div class="col-md-3">
+                  <div class="card">
+                      <div class="card-body">
+                              <img class="card-img-top" src="{{ i[2] }}" alt="Image not available">
+                              <h2 class="text-black">{{ i[0] }}</h2>
+                              <h4 class="text-black">{{ i[1] }}</h4>
+                      </div>
+                  </div>
+              </div>
+          {% endfor %}
+        {% endif %}
             </div>
         </div>
 </body>
