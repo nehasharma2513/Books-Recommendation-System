@@ -7,6 +7,7 @@ import pickle
 popular_df=pickle.load(open('Books-Recommendation-System\popular.pkl', 'rb'))
 rating_input_df=pickle.load(open('Books-Recommendation-System/rating_input.pkl', 'rb'))
 books_df=pickle.load(open('Books-Recommendation-System/books_df.pkl', 'rb'))
+search_df=pickle.load(open('Books-Recommendation-System/search.pkl', 'rb'))
 #################################################
 # Flask Setup
 #################################################
@@ -78,10 +79,10 @@ def view_books():
     search_query = request.args.get('search', '')      
     if search_query:
         
-        filtered_books_df = books_df[books_df['Book-Title'].str.contains(search_query, case=False, na=False)]
+        filtered_books_df = search_df[search_df['Book-Title'].str.contains(search_query, case=False, na=False)]
         books = filtered_books_df.to_dict('records')
     else:
-        books = books_df.to_dict('records')
+        books = search_df.to_dict('records')
 
     return render_template('search.html', books=books)
 

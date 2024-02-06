@@ -7,9 +7,6 @@ h3 {
     margin: 0 auto;
   }
 
-.custom-col-12 {
-    padding-top: 30px; 
-}
 
 .jumbotron{
     height: 120px;
@@ -25,7 +22,7 @@ h3 {
 .text-white{
     color:white ;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif
  }
 
@@ -35,6 +32,15 @@ h3 {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif
 }
+
+.btn-lg
+{
+  width: 20%;
+  height: 50px;
+  color: #000;
+  padding: 100px 50px 25px 70px;
+}
+
 
  * {
     box-sizing: border-box;
@@ -54,11 +60,11 @@ h3 {
   }
 
   .navbar {
-    height: 200px;
+    height: 100px;
 }
 
 .navbar-text{
-  padding-right: 40%;
+  padding-right: 20%;
   font-size: x-large;
 }
 .nav-item{

@@ -13,9 +13,9 @@
   
   <body style="background-color: black">
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
-            <span class="navbar-text">Book Recommedation System</span>
+            <span class="navbar-text"><h1>Book Recommedation System</h1></span>
           <ul class="navbar-nav justify-content-center">
             <li class="nav-item" >
               <a class="nav-link active" href="/">Home</a>
@@ -29,17 +29,22 @@
             <li class="nav-item">
               <a class="nav-link" href="/search">Search Book</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://public.tableau.com/views/Book1_17069231528630/Story1?:language=en-GB&:display_count=n&:origin=viz_share_link">Data Insights</a>
+            </li>
           </ul>
         </div>
       </nav>
-   
+      <br><br><br><br><br><br><br>
       <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-white">Enter Book Name</h1>
+                <h4 class="text-white">Enter Book Name</h4>
                 <form action="/search" method="get">
-                    <input type="text" class="form-control input-lg" id="inputlg" name="search" placeholder="Search books...">
-                    <button type="submit" class="btn btn-primary btn-lg">Search</button>
+                    <input type="text" class="form-control input-lg " id="inputlg" name="search" placeholder="Search books...">
+                    <br>
+                    <input type="submit" class="btn btn-primary btn-lg">
+                    <br><br>
                 </form>
             </div>
             {% for i in books %}
