@@ -78,7 +78,6 @@ def recommend_user():
 def view_books():
     search_query = request.args.get('search', '')      
     if search_query:
-        
         filtered_books_df = search_df[search_df['Book-Title'].str.contains(search_query, case=False, na=False)]
         books = filtered_books_df.to_dict('records')
     else:
