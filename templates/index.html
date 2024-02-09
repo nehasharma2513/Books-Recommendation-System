@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Book Recommedation System</title>
+  <title>Book Recommendation System</title>
   <link rel="stylesheet" href="../static/css/style.css"/>     
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
    <!-- Grey with black text -->
   <nav class="navbar navbar-expand-sm navbar-inverse">
     <div class="container-fluid">
-      <span class="navbar-text"><h1>Book Recommedation System</h1></span>
+      <span class="navbar-text"><h1>Book Recommendation System</h1></span>
       <ul class="navbar-nav justify-content-center">
         <li class="nav-item" >
           <a class="nav-link" href="/">Home</a>
@@ -32,7 +32,7 @@
           <a class="nav-link" href="/search">Search Book</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://public.tableau.com/views/BookRecommendations_17072677992430/Story1?:language=en-GB&:display_count=n&:origin=viz_share_link">Data Insights</a>
+          <a class="nav-link" href="/tableau">Data Insights</a>
         </li>
       </ul>
     </div>
@@ -41,7 +41,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-black">Most Rated Books</h1>
+            <h1 class="text-black">Most Popular Books</h1>
         </div>
 
                 {% for i in range(book_name|length)%}

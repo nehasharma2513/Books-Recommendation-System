@@ -3,6 +3,18 @@ h3 {
     font-family: Arial, Helvetica, sans-serif
 }
 
+input[type="text"].form-control {
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+}
+
+input[type="submit"].btn {
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-left: 9px;
+  margin-top: 10px;
+}
+
 
 .centeredText{
     text-align: center;
@@ -23,11 +35,21 @@ h3 {
   font-family: Arial, Helvetica, sans-serif
 }
 
-.text-grey{
+.text-black-left{
   color:black ;
-  text-align: center;
+  text-align: left;
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.text-grey{
+  /* text-align: center; */
+  font-weight: 150;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
 }
 
 .btn-lg
@@ -73,5 +95,59 @@ h3 {
   font-size: white;
   font-weight: bold;
   font-family: Lucida Sans Unicode ;
+}
+
+/* cards styling */
+
+.card {
+  margin-bottom: 20px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.card h2,
+.card h4 {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* to ensure headers are aligned */
+.text-header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0e0d0d
+}
+
+/* ***************  */
+/* Table styling */
+/* ***************  */
+
+.table {
+  font-family: 'Arial', sans-serif;
+  margin-left: 40px;
+  margin-right: 10px;
+}
+
+/* Table header */
+.table>thead>tr>th {
+
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #a9b0b7;
+}
+
+/* Table body  */
+.table>tbody>tr>td {
+  vertical-align: middle;
+  font-size: 1.3em;
+  color: #2d2c2c;
 }
 

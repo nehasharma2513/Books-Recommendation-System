@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Recommend by Book</title>
+  <title>Book Recommendation System</title>
   <link rel="stylesheet" href="../static/css/style.css"/>     
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -15,9 +15,9 @@
 <body style="background-color: white">
 
    <!-- Grey with black text -->
-   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm navbar-inverse">
     <div class="container-fluid">
-        <span class="navbar-text"><h1>Book Recommedation System</h1></span>
+      <span class="navbar-text"><h1>Book Recommendation System</h1></span>
       <ul class="navbar-nav justify-content-center">
         <li class="nav-item" >
           <a class="nav-link" href="/">Home</a>
@@ -32,7 +32,7 @@
           <a class="nav-link" href="/search">Search Book</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://public.tableau.com/views/BookRecommendations_17072677992430/Story1?:language=en-GB&:display_count=n&:origin=viz_share_link">Data Insights</a>
+          <a class="nav-link" href="/tableau">Data Insights</a>
         </li>
       </ul>
     </div>
@@ -41,12 +41,22 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-black">Recommended Books</h1>
-            <form action="/recommend_book", method="post">
-                <input name="user_book" type="text" class="form-control input-lg" id="inputlg"><br>
-                <input type="submit" class="btn btn-primary btn-lg">
+            <div class="col-md-4 offset-md-4">
+            {% if book %}
+            <h1 class="text-header">Recommendations: '{{ book }}'</h1>
+      {% else %}
+      <h1 class="text-header">Recommended Books</h1>
+      {% endif %}
 
+            <form action="/recommend_book", method="post">
+                <div class="input-group mb-3">
+                  <input name="user_book" type="text" class="form-control input-lg" placeholder="Enter Book Title" id="inputlg"><br>
+                  <div class="input-group-append">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                  </div>
+                </div>
             </form>
+          </div>
         </div>
          {% if data %}
           {% for i in data %}
@@ -55,9 +65,9 @@
                       <div class="card-body">
                               <img class="card-img-top" src="{{ i['Image-URL-M']  }}" alt="Image not available">
                               <h2 class="text-black">{{ i['Book-Title']  }}</h2>
-                              <h4 class="text-black">Author - {{ i['Book-Author']  }}</h4>
-                              <h4 class="text-grey">Publisher - {{ i['Publisher']  }}</h4>
-                              <h4 class="text-grey">YOP - {{ i['Year-Of-Publication']  }}</h4>
+                              <h4 class="text-grey">Author: {{ i['Book-Author']  }}</h4>
+                              <h4 class="text-grey">Publisher: {{ i['Publisher']  }}</h4>
+                              <h4 class="text-grey">YOP: {{ i['Year-Of-Publication']  }}</h4>
                       </div>
                   </div>
               </div>
