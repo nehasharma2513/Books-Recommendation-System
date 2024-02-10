@@ -60,7 +60,7 @@ def recommend_book():
     book_title_list=[user_book]
     recommendations=recommendations[~recommendations.index.isin(book_title_list)].sort_values(by=user_book, ascending=False)
     # select top top_X_recommendations
-    top_recommendations=recommendations[:5].rename(columns={user_book:'similarity rate'})
+    top_recommendations=recommendations[:8].rename(columns={user_book:'similarity rate'})
     top_recommendations=top_recommendations.rename_axis('Book-Title', axis='index')
     recommendations_full_info=pd.merge(top_recommendations, books_df, left_on='Book-Title',right_on='Book-Title', how='left')
     dict_years=dict(recommendations_full_info.groupby('Book-Title')['Year-Of-Publication'].max())
