@@ -13,9 +13,11 @@ The project can be run using following steps:
 ### Limitations
 This engine uses a static set of data. Due to time constraints, we could not build a recommender system that can work with new data in this iteration of the project.
 
-### Analysis
+### Analysis and Model building
 Our data sets include 3 csv files - Users, Books and Ratings
 Our Recommender engine is focused on Collaborative Filtering (books similarity and user similarity) 
+The models used to determine Recommendations are Cosine Similarity and SVD(Singular Value Decomposition)
+We are evaluating our model's performance based on RMSE Values for each model
 
 
 ### References
