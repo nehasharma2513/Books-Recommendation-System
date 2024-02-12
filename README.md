@@ -19,11 +19,11 @@ Our Recommender engine is focused on Collaborative Filtering (books similarity a
 
 
 ### References
-[Recommendation Engine Concepts](https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/)
-[BootStrap](https://www.w3schools.com/bootstrap/bootstrap_get_started.asp)
-[Flask Documentation](https://flask.palletsprojects.com/en/3.0.x/)
-[Jinja Template](https://jinja.palletsprojects.com/en/3.1.x/)
-[CSS](https://www.w3schools.com/css/)
+[Recommendation Engine Concepts](https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/)  
+[BootStrap](https://www.w3schools.com/bootstrap/bootstrap_get_started.asp)  
+[Flask Documentation](https://flask.palletsprojects.com/en/3.0.x/)  
+[Jinja Template](https://jinja.palletsprojects.com/en/3.1.x/)  
+[CSS](https://www.w3schools.com/css/)  
 
 
 ### Acknowledgements
