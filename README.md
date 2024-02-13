@@ -42,7 +42,7 @@ This involved creating new features or transforming existing features to improve
 Our Recommender engine is focused on Collaborative Filtering (books similarity and user similarity)
 We trained two machine learning models using:
 
-1. Singular Value Dcomposition (SVD), and
+1. Cosine Similarity and Singular Value Dcomposition (SVD), and
 2. SVD Funk (which was popularized by Simon Funk during the Netflix Prize) using the training dataset.
 We also cross-validated the model using the Surprise module, and hypertuning SVD to identify the best parameters and ensure robustness of the model.
 We evaluated our model's performance using appropriate evaluation metrics such as RMSE (Root Mean Squared Error) and number of latent factors for accuracy. 
